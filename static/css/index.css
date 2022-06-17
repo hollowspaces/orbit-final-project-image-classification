@@ -1,0 +1,166 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  line-height: 1.8;
+  color: #f5f6f7;
+  scroll-behavior: smooth;
+}
+
+p {
+  font-size: 16px;
+}
+
+a:link {
+  color: #555555;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.margin {
+  margin-bottom: 45px;
+}
+
+.margin-2 {
+  margin-bottom: 0px;
+}
+
+.margin-3 {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  color: #000000;
+}
+
+.margin-4 {
+  margin-top: 80px;
+}
+
+.margin-5 {
+  margin-bottom: 20px;
+}
+
+.padding-1 {
+  padding-bottom: 25px;
+}
+
+.bg-1 {
+  background-color: #c7ab59;
+  color: #ffffff;
+}
+.bg-2 {
+  background-color: #372c2e;
+  color: #ffffff;
+}
+.bg-3 {
+  background-color: #ffffff;
+  color: #555555;
+}
+.bg-4 {
+  background-color: #563727;
+  color: #fff;
+}
+
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+  background-color: #000000;
+}
+.navbar-header a:hover {
+  color: #de9e46;
+}
+.nav-item a:hover {
+  color: #de9e46 !important;
+}
+
+/* Upload and drag file */
+.box {
+  position: relative;
+  background: #372c2e;
+  width: 100%;
+}
+
+.box-solid {
+  background: #372c2e;
+}
+
+.box-header {
+  color: #91b0b3;
+  display: block;
+  padding: 10px;
+  position: relative;
+  border-bottom: 1px solid #372c2e;
+  margin-bottom: 10px;
+}
+.box-tools {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.dropzone-wrapper {
+  border: 2px dashed #91b0b3;
+  color: #92b0b3;
+  position: relative;
+  height: 150px;
+}
+.dropzone-desc {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: 40%;
+  top: 50px;
+  font-size: 16px;
+}
+.dropzone,
+.dropzone:focus {
+  position: absolute;
+  outline: none !important;
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  opacity: 0;
+}
+.dropzone-wrapper:hover,
+.dropzone-wrapper.dragover {
+  background: #ecf0f5;
+}
+.preview-zone {
+  text-align: center;
+  background: #372c2e;
+}
+.preview-zone .box {
+  background: #372c2e;
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}

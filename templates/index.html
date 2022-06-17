@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="{{url_for('static', filename='img/A-icon.png')}}" type="image/icon type" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Final Project</title>
+  </head>
+
+  <body id="homepage">
+    <!-- Navbar -->
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#homepage">ALTAIR</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">HOME</a></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#predict">PREDICT</a></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">ABOUT</a></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- First Container -->
+    <div id="home" class="container-fluid bg-1 text-center">
+        <img
+            src="{{url_for('static', filename='img/ethnic.png')}}"
+            style="display: inline"
+            alt="ethnic"
+            width="100%"
+        />
+    </div>
+
+    <!-- Second Container -->
+    <div id="predict" class="container-fluid bg-2 text-center">
+      <h3 class="margin"><b>Predict</b></h3>
+      <p class="padding-1">Unggah foto seseorang yang ingin Anda prediksi atau copy paste link gambar pada form input di bawah ini </p>
+        <form action="/success" method="post", enctype="multipart/form-data">
+          <div class="row">
+           <div class="col-md-12">
+            <div class="form-group">
+             <div class="preview-zone hidden">
+              <div class="box box-solid">
+               <div class="box-header with-border">
+                <div><h4 style="color:white"><b>Preview</b></h4></div>
+                <div class="box-tools pull-right">
+                 <button type="button" class="btn btn-danger btn-xs remove-preview">
+                  <i class="fa fa-times"></i> Reset This Form
+                 </button>
+                </div>
+               </div>
+               <div class="box-body"></div>
+              </div>
+             </div>
+             <div class="dropzone-wrapper">
+              <div class="dropzone-desc">
+               <i class="glyphicon glyphicon-download-alt"></i>
+               <p>Choose an image file or drag it here.</p>
+              </div>
+              <input type="file" name="file" class="dropzone">
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="row margin">
+           <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Start Prediction</button>
+           </div>
+          </div>
+        </form>
+
+        <div class="uploadOR">
+          <span><b>OR</b></span>
+          <br></br>
+        </div>
+        <div class="upload-link">
+          <form class = "link-form" action="/success" method="post", enctype="multipart/form-data">
+            <input class="link-form-input" type="text", maxlength="1000", name = "link" placeholder="Paste the image URL(not the site address)"/>
+            <br></br>
+            <div class="row margin">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Proceed</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="{{url_for('static', filename='js/script.js')}}"></script>
+       
+    </div>
+
+    <!-- Third Container (Grid) -->
+    <div id="about" class="container-fluid bg-3 text-center">
+      <h3 class="margin"><b>About</b></h3>
+      <p class="padding-1 ">
+        Aplikasi ini menggunakan algoritma CNN (Convolutional Neural Network) yang berfungsi untuk mengklasifikasi gambar wajah sesuai asal sukunya. Terbagi menjadi 6 kelas berdasarkan pulau yaitu pulau Sumatera, Jawa, Kalimantan, Sulawesi, Sunda Kecil, Maluku dan Papua. Aplikasi ini bertujuan untuk membantu dan memudahkan turis domestik maupun mancanegara untuk mengenali suku/etnis di indonesia berdasarkan warna kulit. 
+        Cara kerja dari aplikasi ini sangat sederhana yaitu dengan cara mengupload gambar wajah pada form yang disediakan kemudian sistem akan memproses gambar tersebut menjadi sebuah informasi dari wajah tersebut.
+      </p>
+      <br/>
+      <h3 class="margin"><b>Our Team</b></h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <img
+            src="{{url_for('static', filename='img/boy-1.png')}}"
+            class="img-responsive margin-5 center"
+            style="width: 20%"
+            alt="Image"
+          />
+          <p>
+            <b>Muhammad Ikram Kamal</b>
+            <br>Data Exploration</br>
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{{url_for('static', filename='img/boy-2.png')}}"
+            class="img-responsive margin-5 center"
+            style="width: 20%"
+            alt="Image"
+          />
+          <p>
+            <b>Hayrul Madani</b>
+            <br>Evaluation</br>
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{{url_for('static', filename='img/boy-3.png')}}"
+            class="img-responsive margin-5 center"
+            style="width: 20%"
+            alt="Image"
+          />
+          <p>
+            <b>Rifaldho Muhammad Rizki</b>
+            <br>Modelling</br>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+            <img
+              src="{{url_for('static', filename='img/girl-1.png')}}"
+              class="img-responsive margin-5 center"
+              style="width: 20%"
+              alt="Image"
+            />
+            <p>
+              <b>Marissa Azzuhruf Gamayanti</b>
+              <br>Data Acquisition</br>
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <img
+              src="{{url_for('static', filename='img/girl-2.png')}}"
+              class="img-responsive margin-5 center"
+              style="width: 20%"
+              alt="Image"
+            />
+            <p>
+              <b>Sri Puji Astuti</b>
+              <br>Deployment</br>
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-4 text-center">
+      <p>Altair Project @2022</p>
+    </footer>
+  </body>
+</html>
